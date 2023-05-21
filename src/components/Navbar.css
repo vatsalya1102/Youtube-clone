@@ -1,0 +1,144 @@
+nav {
+    background-color: #90422b;
+    height: 70px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    border-radius: 0 0 5px 5px;
+}
+  
+label.logo {
+    font-size: 2em;
+    line-height: 70px;
+    padding: 0 60px;
+    font-weight: 400;
+    cursor: pointer;
+}
+  
+.logo-image {
+    width: 2.5rem;
+    height: 2rem;
+    position: absolute;
+    margin-top: 1.3rem;
+    margin-left: 10px;
+}
+  
+nav ul {
+    float: right;
+    z-index: 100;
+}
+  
+nav ul li {
+    display: inline-block;
+    line-height: 70px;
+    margin: 0 20px;
+}
+  
+a {
+    color: #eee;
+}
+  
+nav ul li a {
+    color: #eee;
+    font-size: 1.1rem;
+    padding: 7px 13px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+  
+i {
+    padding-right: 5px;
+}
+  
+.checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 70px;
+    margin-right: 1.3rem;
+    cursor: pointer;
+    display: none;
+}
+  
+#check {
+    display: none;
+}
+  
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 1.3rem;
+    }
+  
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1096px) {
+    .nav-options:hover {
+        background-color: #fff;
+        color: #90422b;
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1096px) {
+    .checkbtn {
+        display: block;
+    }
+  
+    ul {
+        position: fixed;
+        width: 100%;
+        top: 70px;
+        right: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        backdrop-filter: blur(2rem);
+        border-radius: 0 0 15px 15px;
+        margin: 0;
+    }
+  
+    nav ul li {
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: 30px;
+        margin: 0;
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+
+    .nav-options:hover {
+        color: #90422b;
+    }
+  
+    nav ul li a {
+        font-size: 1.1rem;
+        padding: 0;
+    }
+  
+    nav ul li:hover {
+        background: none;
+        background-color: #fff;
+        color: #90422b;
+        transition: 1s;
+    }
+  
+    a:hover {
+        background: none;
+    }
+  
+    #check:checked ~ ul {
+        right: 0;
+    }
+  
+    .nav-options {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+}
+  
