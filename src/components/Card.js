@@ -2,8 +2,7 @@ import React from 'react'
 import './Card.css'
 import { useState } from 'react'
 import Player from './Player'
-import { DefaultPlayer as Video } from 'react-html5video/dist';
-import 'react-html5video/dist/styles.css';
+import ReactPlayer from 'react-player'
 
 function Card(props) {
   const [buttonPopup, setButtonPopup] = useState(false)
@@ -30,12 +29,9 @@ function Card(props) {
         </div>
       </div>
 
-
       <Player trigger={buttonPopup} setTrigger={setButtonPopup}>
         <div className='video-player'>
-          <Video autoPlay loop>
-            <source className='video-player' src={videoLink} type='video/webm' />
-          </Video>
+          <ReactPlayer width='100%' height='400px' controls url={videoLink} playing={true} />
         </div>
         <h2 className='video-title player-video-title'>{title}</h2>
         <p className='video-desc'>{description}</p>

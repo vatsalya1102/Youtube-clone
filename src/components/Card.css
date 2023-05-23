@@ -1,11 +1,12 @@
 .card{
     margin: 20px;
     height:min-content;
+    width: 225px;
 }
 
 .thumbnail-image{
-    height: 200px;
-    width: 340px;
+    height: 400px;
+    width: auto;
     border-radius: 10px;
 }
 
@@ -52,9 +53,9 @@
     top: 0;
     left: 0;
     right: 0;
-    transition: 0.7s;
-    height: 200px;
-    width: 340px;
+    transition: 0.3s;
+    height: 400px;
+    width: 225px;
     border-radius: 10px;
     bottom: 100%;
 }
@@ -79,7 +80,7 @@
     bottom: 0;
     box-shadow: 0 0 0.7rem #a259ff;
     background-color: rgb(112, 13, 13);
-    transition: 0.7s;
+    transition: 0.3s;
 }
 
 .thumbnail-div:hover .play-btn{
@@ -96,5 +97,10 @@
 }
 
 .video-desc{
+    font-size: 0.8rem;
     margin-top: 10px;
+}
+
+.mnkm{
+    height: 300px;
 }
