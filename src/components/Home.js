@@ -1,12 +1,11 @@
 import Card from './Card'
 import './Home.css'
 import React, { useState } from 'react'
-import Spinner from './Spinner/Spinner'
 import { useEffect } from 'react'
-import ReactPaginate from 'react-paginate'
 
 function Components(props) {
   const [videos, setVideos] = useState([])
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
 
@@ -26,40 +25,36 @@ function Components(props) {
   useEffect(() => {
     updateVideos();
     // eslint-disable-next-line
-  }, [])
+  }, [page])
 
-  const handlePageChange = (data) => {
-    setPage(data.selected+1)
-  }
+  const goAhead = (() => {
+    if(page!==9)
+    setPage(page+1);
+  })
+
+  const goBack = (() => {
+    if(page!==1){
+      setPage(page-1);
+    }
+  })
+
+  const firstPage = (() => {
+    setPage(1);
+  })
+
+  const lastPage = (() => {
+    setPage(9);
+  })
 
   return (
     <div className='home-div'>
-      {loading && <Spinner />}
+      <div className='header'><button onClick={firstPage}><i className="fa-solid fa-circle-chevron-left"></i></button><button onClick={goBack}><i className="fa-solid fa-chevron-left"></i></button><button onClick={goAhead}><i className="fa-solid fa-chevron-right"></i></button><button onClick={lastPage}><i className="fa-solid fa-circle-chevron-right"></i></button></div>
       {videos.map((video) => {
         return (
           <Card key={video.postId} title={video.submission.title} description={video.submission.description} thumbnail={video.submission.thumbnail} videoLink={video.submission.mediaUrl} creatorName={video.creator.name} profileImage={video.creator.pic} />
         )
       })}
-
-      {/* <ReactPaginate
-        previousLabel={'previous'}
-        nextLabel={'next'}
-        breakLabel={'...'}
-        pageCount={9}
-        onPageChange={handlePageChange}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={2}
-        
-        containerClassName='pagination'
-        pageClassName='page-item'
-        pageLinkClassName='page-link'
-        previousClassName='page-item'
-        previousLinkClassName='page-link'
-        nextClassName='page-item'
-        nextLinkClassName='page-link'
-        breakClassName='page-item'
-        breakLinkClassName='page-link'
-        activeClassName='active' /> */}
+      {/* <Paginate page={page} onChange={onChange} /> */}
     </div>
   )
 }

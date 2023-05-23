@@ -15,7 +15,7 @@ function Card(props) {
       <div className='thumbnail-div'>
         <img className='thumbnail-image' src={thumbnail} alt='Thumbnail' />
         <div className='button-overlay'>
-          <button className='play-btn' onClick={() => setButtonPopup(true)}><i class="fa-regular fa-circle-play fa-2xl"></i></button>
+          <button className='play-btn' onClick={() => setButtonPopup(true)}><i className="fa-regular fa-circle-play fa-2xl"></i></button>
         </div>
       </div>
 
