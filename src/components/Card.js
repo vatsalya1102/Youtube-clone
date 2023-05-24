@@ -20,7 +20,7 @@ function Card(props) {
       </div>
 
       <div className='card-content'>
-        <div className='profile-div'>
+        <div onClick={() => setButtonPopup(true)} className='profile-div'>
           <img className='profile-image' src={profileImage} alt="creator-profile" />
         </div>
         <div className='information'>
@@ -33,7 +33,7 @@ function Card(props) {
         <div className='video-player'>
           <ReactPlayer width='100%' height='400px' controls url={videoLink} playing={true} />
         </div>
-        <h2 className='video-title player-video-title'>{title}</h2>
+        <h2 className='video-title player-video-title'>{`${title} by ${creatorName}`}</h2>
         <p className='video-desc'>{description}</p>
       </Player>
 
