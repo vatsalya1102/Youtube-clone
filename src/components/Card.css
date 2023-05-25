@@ -34,7 +34,7 @@
 }
 
 .video-title{
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .creator-name{
@@ -95,6 +95,7 @@
 .player-video-title{
     margin-top: 10px;
     font-size: 1rem;
+    width: 50%;
 }
 
 .video-desc{
@@ -102,6 +103,10 @@
     margin-top: 10px;
 }
 
-.mnkm{
-    height: 300px;
+.player-creator{
+    font-size: 1rem;
+    font-weight: 200;
+    position: absolute;
+    top: 440px;
+    right: 53px;
 }

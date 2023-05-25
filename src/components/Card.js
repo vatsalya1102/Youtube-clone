@@ -33,7 +33,10 @@ function Card(props) {
         <div className='video-player'>
           <ReactPlayer width='100%' height='400px' controls url={videoLink} playing={true} />
         </div>
-        <h2 className='video-title player-video-title'>{`${title} by ${creatorName}`}</h2>
+        {/* <h2 className='video-title player-video-title'>{`${title} by ${creatorName}`}</h2> */}
+
+        <h2 className='video-title player-video-title'>{title}</h2> 
+        <h3 className='player-creator'>{`by ${creatorName}`}</h3>
         <p className='video-desc'>{description}</p>
       </Player>
 
